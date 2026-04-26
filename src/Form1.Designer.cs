@@ -29,11 +29,54 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            parametersTimer = new System.Windows.Forms.Timer(components);
+            cpuUsageLabel = new Label();
+            ramUsageLabel = new Label();
+            SuspendLayout();
+            // 
+            // parametersTimer
+            // 
+            parametersTimer.Enabled = true;
+            parametersTimer.Interval = 1000;
+            parametersTimer.Tick += parametersTimer_Tick;
+            // 
+            // cpuUsageLabel
+            // 
+            cpuUsageLabel.AutoSize = true;
+            cpuUsageLabel.Location = new Point(12, 19);
+            cpuUsageLabel.Name = "cpuUsageLabel";
+            cpuUsageLabel.Size = new Size(104, 15);
+            cpuUsageLabel.TabIndex = 1;
+            cpuUsageLabel.Text = "no cpu usage data";
+            // 
+            // ramUsageLabel
+            // 
+            ramUsageLabel.AutoSize = true;
+            ramUsageLabel.Location = new Point(12, 47);
+            ramUsageLabel.Name = "ramUsageLabel";
+            ramUsageLabel.Size = new Size(110, 15);
+            ramUsageLabel.TabIndex = 2;
+            ramUsageLabel.Text = "no RAM usage data";
+            ramUsageLabel.Click += ramUsageLabel_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(870, 434);
+            Controls.Add(ramUsageLabel);
+            Controls.Add(cpuUsageLabel);
+            Margin = new Padding(2);
+            Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+        private System.Windows.Forms.Timer parametersTimer;
+        private Label cpuUsageLabel;
+        private Label ramUsageLabel;
     }
 }
