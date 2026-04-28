@@ -1,6 +1,6 @@
 ﻿namespace productionLine
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -68,7 +68,7 @@
             Controls.Add(cpuUsageLabel);
             Margin = new Padding(2);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Production Line Symulation";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

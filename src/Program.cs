@@ -6,7 +6,18 @@ namespace productionLine
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            loginForm loginWindow = new loginForm();
+
+            if (loginWindow.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new mainForm());
+            }
+            else
+            {
+                MessageBox.Show("Login failed. Wrong username or password.");
+                Application.Exit();
+            } 
         }
     }
 }

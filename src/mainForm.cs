@@ -3,14 +3,14 @@ using LibreHardwareMonitor.Hardware;
 
 namespace productionLine
 {
-    public partial class Form1 : Form
+    public partial class mainForm : Form
     {
         private PerformanceCounter cpuUsageCounter;
         private PerformanceCounter ramUsageCounter;
 
         private Computer computer;
 
-        public Form1()
+        public mainForm()
         {
             InitializeComponent();
             cpuUsageCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
@@ -30,15 +30,11 @@ namespace productionLine
 
         private void parametersTimer_Tick(object sender, EventArgs e)
         {
-            // 1. Standardowe użycie CPU i RAM (to Ci działa)
             float cpuUsage = cpuUsageCounter.NextValue();
             cpuUsageLabel.Text = $"CPU usage: {cpuUsage:0.0}%";
 
             float ramUsage = ramUsageCounter.NextValue();
             ramUsageLabel.Text = $"RAM usage: {ramUsage:0.0}%";
-
-            // 2. Diagnostyka temperatury
-            bool foundTemp = false;
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -50,7 +46,5 @@ namespace productionLine
         {
             
         }
-
-        
     }
 }
