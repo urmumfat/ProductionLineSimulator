@@ -59,7 +59,7 @@
             ramUsageLabel.Text = "no RAM usage data";
             ramUsageLabel.Click += ramUsageLabel_Click;
             // 
-            // Form1
+            // mainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -67,7 +67,7 @@
             Controls.Add(ramUsageLabel);
             Controls.Add(cpuUsageLabel);
             Margin = new Padding(2);
-            Name = "Form1";
+            Name = "mainForm";
             Text = "Production Line Symulation";
             Load += Form1_Load;
             ResumeLayout(false);

@@ -13,11 +13,6 @@ namespace productionLine
             {
                 Application.Run(new mainForm());
             }
-            else
-            {
-                MessageBox.Show("Login failed. Wrong username or password.");
-                Application.Exit();
-            } 
         }
     }
 }
