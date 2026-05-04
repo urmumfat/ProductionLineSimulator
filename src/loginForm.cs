@@ -111,7 +111,7 @@ namespace productionLine
             if (usr != null)
             {
                 confirmedUser.Username = usr.Username;
-                confirmedUser.AccessLvl = usr.AccessLvl;
+                confirmedUser.AuthorizationLvl = usr.AuthorizationLvl;
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -157,12 +157,12 @@ namespace productionLine
     {
         public string Username { get; set; }
         public string Password { get; set; }
-        public int AccessLvl { get; set; }
+        public int AuthorizationLvl { get; set; }
     }
 
     public static class confirmedUser
     {
         public static string Username { get; set; }
-        public static int AccessLvl { get; set; }
+        public static int AuthorizationLvl { get; set; }
     }
 }

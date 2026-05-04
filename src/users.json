@@ -2,11 +2,16 @@
   {
     "Username": "admin",
     "Password": "admin123",
-    "AccessLvl": 3
+    "AuthorizationLvl": 3
   },
   {
     "Username": "operator",
     "Password": "operator123",
-    "AccessLvl":  2
+    "AuthorizationLvl": 2
+  },
+  {
+    "Username": "viewer",
+    "Password": "viewer123",
+    "AuthorizationLvl": 1
   }
 ]

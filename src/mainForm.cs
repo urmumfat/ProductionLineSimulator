@@ -26,16 +26,13 @@ namespace productionLine
         private void mainForm_Load(object sender, EventArgs e)
         {
             usernameLabel.Text = confirmedUser.Username;
-            accessLabel.Text = $"access level: {confirmedUser.AccessLvl}";
+            accessLabel.Text = $"{confirmedUser.AuthorizationLvl}";
         }
 
         private void parametersTimer_Tick(object sender, EventArgs e)
         {
-            float cpuUsage = cpuUsageCounter.NextValue();
-            cpuUsageLabel.Text = $"CPU usage: {cpuUsage:0.0}%";
-
-            float ramUsage = ramUsageCounter.NextValue();
-            ramUsageLabel.Text = $"RAM usage: {ramUsage:0.0}%";
+            parametersUpdate(cpuUsageCounter.NextValue(), cpuUsageLabel, "CPU usage: ", cpuFillPanel, cpuBackgroudPanel, 20, 80);
+            parametersUpdate(ramUsageCounter.NextValue(), ramUsageLabel, "RAM usage: ", ramFillPanel, ramBackgroudPanel, 60, 80);
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -46,6 +43,16 @@ namespace productionLine
         private void ramUsageLabel_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void parametersUpdate(float usage, Label label, string textPrefix, Panel fillPanel, Panel backgroudPanel, int colourThreshold1, int colourThreshold2)
+        {
+            label.Text = textPrefix + $"{usage:0.0}%";
+            fillPanel.Width = ((int)usage * backgroudPanel.Width) / 100;
+
+            if ((int)usage > colourThreshold2) fillPanel.BackColor = Color.Red;
+            else if ((int)usage > colourThreshold1) fillPanel.BackColor = Color.Yellow;
+            else fillPanel.BackColor = Color.LimeGreen;
         }
     }
 }
