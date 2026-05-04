@@ -1,10 +1,12 @@
 [
   {
     "Username": "admin",
-    "Password": "admin123"
+    "Password": "admin123",
+    "AccessLvl": 3
   },
   {
     "Username": "operator",
-    "Password": "operator123"
+    "Password": "operator123",
+    "AccessLvl":  2
   }
 ]

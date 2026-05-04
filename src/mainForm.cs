@@ -23,9 +23,10 @@ namespace productionLine
             };
             computer.Open();
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private void mainForm_Load(object sender, EventArgs e)
         {
-
+            usernameLabel.Text = confirmedUser.Username;
+            accessLabel.Text = $"access level: {confirmedUser.AccessLvl}";
         }
 
         private void parametersTimer_Tick(object sender, EventArgs e)

@@ -32,6 +32,8 @@
             parametersTimer = new System.Windows.Forms.Timer(components);
             cpuUsageLabel = new Label();
             ramUsageLabel = new Label();
+            usernameLabel = new Label();
+            accessLabel = new Label();
             SuspendLayout();
             // 
             // parametersTimer
@@ -43,33 +45,56 @@
             // cpuUsageLabel
             // 
             cpuUsageLabel.AutoSize = true;
-            cpuUsageLabel.Location = new Point(12, 19);
+            cpuUsageLabel.Location = new Point(17, 32);
+            cpuUsageLabel.Margin = new Padding(4, 0, 4, 0);
             cpuUsageLabel.Name = "cpuUsageLabel";
-            cpuUsageLabel.Size = new Size(104, 15);
+            cpuUsageLabel.Size = new Size(159, 25);
             cpuUsageLabel.TabIndex = 1;
             cpuUsageLabel.Text = "no cpu usage data";
             // 
             // ramUsageLabel
             // 
             ramUsageLabel.AutoSize = true;
-            ramUsageLabel.Location = new Point(12, 47);
+            ramUsageLabel.Location = new Point(17, 78);
+            ramUsageLabel.Margin = new Padding(4, 0, 4, 0);
             ramUsageLabel.Name = "ramUsageLabel";
-            ramUsageLabel.Size = new Size(110, 15);
+            ramUsageLabel.Size = new Size(169, 25);
             ramUsageLabel.TabIndex = 2;
             ramUsageLabel.Text = "no RAM usage data";
             ramUsageLabel.Click += ramUsageLabel_Click;
             // 
+            // usernameLabel
+            // 
+            usernameLabel.AutoSize = true;
+            usernameLabel.Enabled = false;
+            usernameLabel.Location = new Point(1099, 32);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new Size(73, 25);
+            usernameLabel.TabIndex = 3;
+            usernameLabel.Text = "no data";
+            // 
+            // accessLabel
+            // 
+            accessLabel.AutoSize = true;
+            accessLabel.Enabled = false;
+            accessLabel.Location = new Point(1099, 78);
+            accessLabel.Name = "accessLabel";
+            accessLabel.Size = new Size(73, 25);
+            accessLabel.TabIndex = 4;
+            accessLabel.Text = "no data";
+            // 
             // mainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(870, 434);
+            ClientSize = new Size(1243, 723);
+            Controls.Add(accessLabel);
+            Controls.Add(usernameLabel);
             Controls.Add(ramUsageLabel);
             Controls.Add(cpuUsageLabel);
-            Margin = new Padding(2);
             Name = "mainForm";
             Text = "Production Line Symulation";
-            Load += Form1_Load;
+            Load += mainForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -78,5 +103,7 @@
         private System.Windows.Forms.Timer parametersTimer;
         private Label cpuUsageLabel;
         private Label ramUsageLabel;
+        private Label usernameLabel;
+        private Label accessLabel;
     }
 }
